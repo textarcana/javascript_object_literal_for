@@ -12,7 +12,7 @@ Wraps the result of to_json responses in an object literal that is a method of a
 == Examples
 The following Haml statement,
 
-  = js_object_literal_for('ZEP', @frobnitz)
+  = js_object_literal_for('ZEP', @frobnitz) unless @frobnitz.nil?
 
 might become this when the markup is rendered:
 
