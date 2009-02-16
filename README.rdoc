@@ -1,0 +1,28 @@
+:title:JavaScript Object Literal For: Rails
+= Name
+javascript_object_literal_for
+
+= Synopsis
+
+  = js_object_literal_for('ZEP', @frobnitz)
+    
+= Description
+Wraps the result of to_json responses in an object literal that is a method of a JavaScript DOM object.  Insert a script tag with the serialized model.
+
+== Examples
+The following Haml statement,
+
+  = js_object_literal_for('ZEP', @frobnitz)
+
+might become this when the markup is rendered:
+
+  <script type="text/javascript">
+    if (typeof ZEP !== 'object') { var ZEP = {}; }    
+    if (typeof ZEP.models !== 'object') { ZEP.models = {}; }
+      ZEP.models.frobnitz = {"frobnitz": {"id": 123, "foo": "bar baz"}};
+  </script>
+
+= License
+This code is provided under the terms of the {MIT License.}[http://www.opensource.org/licenses/mit-license.php]
+= Authors
+Noah Sussman and Mark Coates
