@@ -4,15 +4,17 @@ javascript_object_literal_for
 
 = Synopsis
 
-  = js_object_literal_for('ZEP', @frobnitz)
+  = js_object_literal_for(@frobnitz)
     
 = Description
 Wraps the result of to_json responses in an object literal that is a method of a JavaScript DOM object.  Insert a script tag with the serialized model.
 
+Currently the name of the DOM object is hard-coded to ZEP.
+
 == Examples
 The following Haml statement,
 
-  = js_object_literal_for('ZEP', @frobnitz) unless @frobnitz.nil?
+  = js_object_literal_for(@frobnitz) unless @frobnitz.nil?
 
 might become this when the markup is rendered:
 
